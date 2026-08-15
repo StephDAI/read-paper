@@ -1,6 +1,6 @@
 {
   "name": "paper-review",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A paper-review panel for the DeepSeek Harness: converts PDF papers into structured, selectable text (columns, headings, tables, sub/superscripts, table of contents) with figure and display-equation rendering, a floating ask-about-the-selection dialog, and per-project paper stores under a Paper workspace.",
   "keywords": [
     "dsh",
