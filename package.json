@@ -1,0 +1,54 @@
+{
+  "name": "paper-review",
+  "version": "2.0.0",
+  "description": "A paper-review panel for the DeepSeek Harness: converts PDF papers into structured, selectable text (columns, headings, tables, sub/superscripts, table of contents) with figure and display-equation rendering, a floating ask-about-the-selection dialog, and per-project paper stores under a Paper workspace.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "paper",
+    "pdf",
+    "reader",
+    "arxiv",
+    "pdf-to-text"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./client": { "default": "./lib/client.js" },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louwenbo580/read-paper.git"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "eval": "node eval/eval.mjs"
+  }
+}

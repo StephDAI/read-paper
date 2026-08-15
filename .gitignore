@@ -1,0 +1,5 @@
+node_modules/
+eval/run/
+*.pdf
+.DS_Store
+*.log

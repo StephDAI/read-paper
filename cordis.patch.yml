@@ -1,0 +1,4 @@
+# paper-review bundle patch: one insert over the profile tree.
+- insert:
+    - id: paper-review
+      name: 'paper-review'
