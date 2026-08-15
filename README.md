@@ -38,14 +38,29 @@ display equations rendered visually.
 ### From npm (recommended)
 
 ```bash
-dsh plugin --profile readPaper add paper-review
+dsh plugin --profile readPaper add @deepseek-ai/dsh-web-app paper-review
 # then start the harness:
 dsh --profile readPaper
 ```
 
-`dsh plugin` installs the package, then reconciles `dsh.profile.bundles` —
+`dsh plugin` installs the packages, then reconciles `dsh.profile.bundles` —
 packages that declare `dsh.bundle` join the profile's layer stack
 automatically.
+
+> **Why `@deepseek-ai/dsh-web-app` is included:** a profile created on a
+> machine that has never used it before is seeded with only
+> `@deepseek-ai/dsh-base` (the web surface bundle is not a default for
+> unknown profile names). Adding `@deepseek-ai/dsh-web-app` explicitly is what
+> gives the profile the browser GUI this plugin's panel renders into. On a
+> machine where a `readPaper` profile already exists with the web app, plain
+> `dsh plugin --profile readPaper add paper-review` is enough.
+
+### Prerequisites
+
+- **poppler CLI tools** on PATH (`pdftotext`, `pdftoppm`, `pdfimages`) —
+  see [Requirements](#requirements).
+- **pnpm** for the `dsh plugin` command (it forwards to pnpm). If pnpm is
+  missing: `corepack enable pnpm` or `npm i -g pnpm`.
 
 ### Manual install (no npm)
 
